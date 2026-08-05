@@ -169,7 +169,7 @@ html.js .rv.in{opacity:1;transform:none}
 .navlinks{display:flex;gap:18px;align-items:center;margin-right:auto;margin-left:auto}
 .navlinks a{font-size:14px;text-decoration:none;color:var(--muted)}
 .navlinks a:hover,.navlinks a[aria-current]{color:var(--ink)}
-@media(max-width:700px){.navlinks{display:none}}
+.nav-btn{display:none}
 .lockup{display:flex;align-items:center;gap:11px;text-decoration:none;line-height:1.2}
 .lockup .lm{width:26px;height:26px;flex:0 0 auto;color:var(--ink)}
 .lockup .lt{display:block}
@@ -244,11 +244,35 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .lockup .lm{width:26px;height:28px;flex:0 0 auto;color:var(--ink);overflow:visible}
 .lockup{align-items:flex-start}
 .lockup .lt{padding-top:1px}
+
+/* ---- mobile menu: CSS-only hamburger, mirrors the language switch; works with JS off ---- */
+@media(max-width:700px){
+  .nav-btn{display:inline-flex;align-items:center;justify-content:center;
+    width:44px;height:44px;min-height:44px;flex:0 0 auto;margin-inline-start:auto;
+    border:1px solid var(--ink);border-radius:100px;background:none;color:var(--ink);
+    cursor:pointer;padding:0;-webkit-user-select:none;user-select:none}
+  .nav-btn svg{width:18px;height:18px;display:block}
+  .nav-btn .ic-close{display:none}
+  #nav:checked ~ .app .nav-btn .ic-open{display:none}
+  #nav:checked ~ .app .nav-btn .ic-close{display:block}
+  #nav:focus ~ .app .nav-btn{outline:2px solid var(--accent);outline-offset:2px}
+  .navlinks{position:absolute;top:100%;left:0;right:0;display:none;
+    flex-direction:column;align-items:stretch;gap:0;margin:0;
+    padding:4px var(--gut) 10px;background:var(--paper);
+    border-bottom:1px solid var(--rule);box-shadow:0 12px 24px rgba(34,32,27,.09)}
+  #nav:checked ~ .app .navlinks{display:flex}
+  .navlinks a{min-height:52px;padding:14px 2px;font-size:16px;color:var(--muted);
+    border-top:1px solid var(--rule)}
+  .navlinks a:first-child{border-top:0}
+  .navlinks a:hover,.navlinks a[aria-current]{color:var(--ink)}
+  .navlinks a[aria-current]{font-weight:600}
+}
 </style>
 </head>
 <body>
 
 <input type="checkbox" id="lang" class="sr" aria-label="Switch language / تغيير اللغة">
+<input type="checkbox" id="nav" class="sr" aria-label="Open menu / فتح القائمة">
 
 <div class="app">
 
@@ -276,6 +300,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
       <a href="advisory.html"><span class="ar">الاستشارات</span><span class="en">Advisory</span></a>
       <a href="register.html"><span class="ar">سجّل اهتمامك</span><span class="en">Register</span></a>
     </nav>
+    <label class="nav-btn" for="nav" aria-label="Menu / القائمة">
+      <svg class="ic-open" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" focusable="false"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
+      <svg class="ic-close" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" focusable="false"><path d="M5 5l10 10M15 5L5 15"/></svg>
+    </label>
     <label class="lang-btn" for="lang"><span class="ar">English</span><span class="en">العربية</span></label>
   </div>
 </header>
