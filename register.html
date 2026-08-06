@@ -179,6 +179,12 @@ section{padding-top:54px;padding-bottom:54px}
 .form button{justify-self:start;margin-top:6px;background:var(--ink);color:var(--paper);border:0;
   padding:13px 30px;font:inherit;font-size:15px;cursor:pointer;border-radius:2px;-webkit-appearance:none;appearance:none}
 .form button:hover{background:var(--accent)}
+.form button[disabled]{opacity:.55;cursor:default}
+.form button[disabled]:hover{background:var(--ink)}
+.formmsg{margin-top:18px;padding:14px 16px;border:1px solid var(--rule);border-radius:2px;font-size:15px;display:none}
+.formmsg.show{display:block}
+.formmsg.ok{border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
+.formmsg.err{border-color:#8c2f22;background:#f4e5e1;color:#8c2f22}
 
 .ft{border-top:1px solid var(--rule);padding-top:32px;padding-bottom:32px;color:var(--muted);
   font-size:14px;display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between}
@@ -588,7 +594,24 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
     <p class="mono eyebrow"><span class="ar">النموذج</span><span class="en">The form</span></p>
     <h2 class="h2"><span class="ar">سجّل اهتمامك.</span><span class="en">Register your interest.</span></h2>
     <p class="sub"><span class="ar">الحقل الأخير هو الأهم بالنسبة لنا. أخبرنا بالعطل الذي تراه يتكرّر أكثر من غيره.</span><span class="en">The last field is the one we care about most. Tell us the failure you see repeat more than any other.</span></p>
-    <form class="form" action="mailto:hello@shaqool.org" method="post" enctype="text/plain">
+    <!-- ============================================================================
+         FORM DELIVERY — Web3Forms (https://web3forms.com)
+         The form posts to Web3Forms, which emails every submission to your inbox.
+         TO ACTIVATE (one-time, ~2 minutes):
+           1. Go to https://web3forms.com and enter hello@shaqool.org
+           2. Web3Forms emails you an access key (it arrives in your Zoho inbox) —
+              open that email and click the verify link.
+           3. Paste the key below, replacing YOUR_WEB3FORMS_ACCESS_KEY_HERE.
+         The access key is meant to be public, so it is safe to commit here.
+         Until a real key is set, the form will not deliver.
+    ============================================================================= -->
+    <form class="form" id="regform" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+      <input type="hidden" name="subject" value="New SCQF enquiry from shaqool.org">
+      <input type="hidden" name="from_name" value="Shaqool website">
+      <input type="hidden" name="redirect" value="https://www.shaqool.org/register.html?sent=1">
+      <!-- spam honeypot: hidden from people, bots tick it and get rejected -->
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
       <label><span><span class="ar">الاسم</span><span class="en">Name</span></span><input name="name" required></label>
       <label><span><span class="ar">الجهة</span><span class="en">Organisation</span></span><input name="organisation" required></label>
       <label><span><span class="ar">المسمّى الوظيفي</span><span class="en">Job title</span></span><input name="title"></label>
@@ -619,6 +642,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
         <textarea name="failure" rows="4"></textarea></label>
       <button type="submit"><span class="ar">إرسال</span><span class="en">Send</span></button>
     </form>
+    <div class="formmsg" id="formmsg" role="status" aria-live="polite"></div>
     <p class="sub" style="margin-top:26px"><span class="ar">أو تواصل معنا مباشرةً:</span><span class="en">Or contact us directly:</span>
       <span dir="ltr" style="unicode-bidi:isolate"> <a href="mailto:hello@shaqool.org">hello@shaqool.org</a> · <a href="tel:+447919562341">+44 7919 562341</a></span></p>
     <p class="priv"><span class="ar">تُستخدم بياناتك للتواصل بشأن SCQF فقط، ولا تُشارك مع أي طرف ثالث. يمكنك طلب حذفها في أي وقت.</span><span class="en">Your details are used only to contact you about SCQF, and are not shared with any third party. You can ask us to delete them at any time.</span></p>
@@ -651,6 +675,31 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   } else {
     Array.prototype.forEach.call(document.querySelectorAll(".rv"), function(el){ el.classList.add("in"); });
   }
+
+  // ---- register form: submit in-place via Web3Forms, no mailbox, no page leave ----
+  var OK_MSG  = '<span class="ar">تم استلام طلبك. سنعود إليك قريباً.</span><span class="en">Thanks — your enquiry has been sent. We\'ll be in touch shortly.</span>';
+  var ERR_MSG = '<span class="ar">تعذّر الإرسال. حاول مرة أخرى، أو راسلنا على البريد أدناه.</span><span class="en">Sorry — that didn\'t send. Please try again, or email us at the address below.</span>';
+  var form = document.getElementById("regform"), msg = document.getElementById("formmsg");
+  function show(kind, html){ if(msg){ msg.className = "formmsg show " + kind; msg.innerHTML = html; } }
+
+  if (form && "fetch" in window && "FormData" in window){
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      var btn = form.querySelector("button[type=submit]");
+      if (msg) msg.className = "formmsg";
+      if (btn) btn.disabled = true;
+      fetch(form.action, { method:"POST", headers:{ "Accept":"application/json" }, body:new FormData(form) })
+        .then(function(r){ return r.json().then(function(j){ return { ok:r.ok, j:j }; }); })
+        .then(function(res){
+          if (res.ok && res.j && res.j.success){ form.reset(); show("ok", OK_MSG); }
+          else { show("err", ERR_MSG); }
+        })
+        .catch(function(){ show("err", ERR_MSG); })
+        .then(function(){ if (btn) btn.disabled = false; });
+    });
+  }
+  // no-JS submissions redirect back here with ?sent=1 — acknowledge them too
+  if (msg && /[?&]sent=1/.test(location.search)) show("ok", OK_MSG);
 })();
 </script>
 </body>

@@ -39,6 +39,7 @@ There is nothing to build, lint, or test. The only external runtime dependency i
 
 ## Conventions
 
-- **Contact address / form target:** `hello@shaqool.org`. The register form has no backend — it uses `action="mailto:hello@shaqool.org"` with `enctype="text/plain"`. Keep the contact address consistent across pages if it ever changes.
+- **Contact address:** `hello@shaqool.org`. Keep it consistent across pages if it ever changes (footers, and the "contact us directly" fallback links on `register.html`).
+- **Register form delivery:** the site is static (GitHub Pages), so the form on `register.html` submits to **Web3Forms** (`action="https://api.web3forms.com/submit"`), which emails each enquiry to `hello@shaqool.org`. The public `access_key` hidden field must hold a real key for delivery to work (see the setup comment above the `<form>`). The tail `<script>` intercepts submit and posts via `fetch()` so it sends in place and shows an inline `.formmsg` acknowledgement — with a hidden `botcheck` honeypot for spam and a `redirect` field so no-JS submissions return to `?sent=1`. There is no `mailto:` form action anymore.
 - **Scope wording is substantive, not filler.** Claims about what SCQF is and is not (e.g. "we do not replace or duplicate the Saudi Building Code", warranty/scope boundaries in "Part 100") are deliberate positioning. Treat copy edits to these sections as content decisions, not stylistic tweaks.
 - Class-name idiom is terse and semantic (`.hd`, `.hero`, `.plate`, `.band`, `.fence`, `.rv`, `.mono`, `.eyebrow`). Match the existing naming and the compact, minified-ish CSS style already in the file rather than reformatting it.
