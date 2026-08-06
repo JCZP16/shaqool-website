@@ -151,6 +151,8 @@ section{padding-top:54px;padding-bottom:54px}
 .row .nm{font-weight:500}
 .stat{color:var(--muted);font-size:13px;grid-column:2}
 @media(min-width:640px){.stat{grid-column:auto}}
+.stat.s-draft{color:var(--accent);font-weight:500}
+.stat.s-resv{opacity:.6}
 .companion{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px}
 .chip{border:1px solid var(--rule);background:var(--panel);padding:8px 16px;font-size:14px;border-radius:100px}
 
@@ -564,43 +566,131 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
     <p class="sub" style="margin-bottom:-4px"><span class="ar">كل جزء منشور هو «مدونة ممارسة» — وثيقة توافقية توصي بكيفية تنفيذ العمل، بلا صفة إلزامية. والإطار هو مجموعها مع بروتوكول التدقيق والعلامات.</span><span class="en">Each published part is a code of practice — a consensus document recommending how work should be carried out, carrying no regulatory force. The Framework is those parts together with the audit protocol and the marks.</span></p>
     <p class="sub"><span class="ar">الترتيب ليس زخرفياً. من قرأ جزءاً واحداً يعرف أين يبحث في أي جزء آخر. الأجزاء الأولى مرتّبة بحسب تكلفة العيب لا بحسب سهولة الكتابة.</span><span class="en">The ordering isn't decorative. Anyone who has read one part knows where to look in any other. The first parts are sequenced by the cost of the defect, not by ease of drafting.</span></p>
 
-    <div class="blockhdr"><span class="bn">100</span><span class="bt"><span class="ar">الإطار والتعريفات</span><span class="en">Framework and definitions</span></span></div>
+    <div class="blockhdr"><span class="bn">100</span><span class="bt"><span class="ar">الإطار والمتطلبات العامة</span><span class="en">Framework and common requirements</span></span></div>
     <div class="parts" style="border-top:0;margin-top:0">
       <div class="row"><span class="mono no"><span class="ar">SCQF ١٠٠</span><span class="en">SCQF 100</span></span>
-        <span class="nm"><span class="ar">الإطار العام، النطاق، المرجعية، التصنيف، الحوكمة</span><span class="en">Framework, scope, hierarchy, classification, governance</span></span>
-        <span class="stat"><span class="ar">قيد الإعداد</span><span class="en">In drafting</span></span></div>
+        <span class="nm"><span class="ar">الإطار العام والتعريفات</span><span class="en">Framework and definitions</span></span>
+        <span class="stat s-draft"><span class="ar">قيد الإعداد</span><span class="en">In drafting</span></span></div>
+      <div class="row"><span class="mono no"><span class="ar">SCQF ١١٠</span><span class="en">SCQF 110</span></span>
+        <span class="nm"><span class="ar">الأسطح: التجهيز والتفاوتات والرطوبة</span><span class="en">Substrates — preparation, tolerance and moisture</span></span>
+        <span class="stat s-draft"><span class="ar">قيد الإعداد</span><span class="en">In drafting</span></span></div>
+      <div class="row"><span class="mono no"><span class="ar">SCQF ١٢٠</span><span class="en">SCQF 120</span></span>
+        <span class="nm"><span class="ar">المواد اللاصقة ووسائل التثبيت</span><span class="en">Adhesives, fixings and mechanical fastening</span></span>
+        <span class="stat"><span class="ar">مُخطَّط</span><span class="en">Planned</span></span></div>
+      <div class="row"><span class="mono no"><span class="ar">SCQF ١٣٠</span><span class="en">SCQF 130</span></span>
+        <span class="nm"><span class="ar">المواد المانعة للتسرب والفواصل وحركة المباني</span><span class="en">Sealants, joints and movement accommodation</span></span>
+        <span class="stat"><span class="ar">مُخطَّط</span><span class="en">Planned</span></span></div>
     </div>
 
     <div class="blockhdr"><span class="bn">200</span><span class="bt"><span class="ar">الماء والرطوبة</span><span class="en">Water and moisture</span></span></div>
     <div class="parts" style="border-top:0;margin-top:0">
       <div class="row"><span class="mono no"><span class="ar">SCQF ٢١٠</span><span class="en">SCQF 210</span></span>
-        <span class="nm"><span class="ar">العزل المائي — المناطق الرطبة والأسطح</span><span class="en">Waterproofing — wet areas and roofs</span></span>
-        <span class="stat"><span class="ar">قيد الإعداد</span><span class="en">In drafting</span></span></div>
+        <span class="nm"><span class="ar">العزل المائي: المناطق الرطبة</span><span class="en">Waterproofing — wet areas</span></span>
+        <span class="stat s-draft"><span class="ar">قيد الإعداد</span><span class="en">In drafting</span></span></div>
       <div class="row"><span class="mono no"><span class="ar">SCQF ٢٢٠</span><span class="en">SCQF 220</span></span>
-        <span class="nm"><span class="ar">الأرضيات والطبقات التحضيرية</span><span class="en">Substrates and preparatory layers</span></span>
+        <span class="nm"><span class="ar">الأسطح والشرفات</span><span class="en">Roofs and terraces</span></span>
         <span class="stat"><span class="ar">مُخطَّط</span><span class="en">Planned</span></span></div>
+      <div class="row"><span class="mono no"><span class="ar">SCQF ٢٣٠</span><span class="en">SCQF 230</span></span>
+        <span class="nm"><span class="ar">العزل تحت منسوب الأرض</span><span class="en">Below-grade tanking</span></span>
+        <span class="stat s-resv"><span class="ar">محجوز</span><span class="en">Reserved</span></span></div>
+      <div class="row"><span class="mono no"><span class="ar">SCQF ٢٤٠</span><span class="en">SCQF 240</span></span>
+        <span class="nm"><span class="ar">الميول والتصريف والمصارف</span><span class="en">Falls, drainage and outlets</span></span>
+        <span class="stat s-resv"><span class="ar">محجوز</span><span class="en">Reserved</span></span></div>
     </div>
 
-    <div class="blockhdr"><span class="bn">300</span><span class="bt"><span class="ar">التشطيبات والأسطح</span><span class="en">Finishes and surfaces</span></span></div>
+    <div class="blockhdr"><span class="bn">300</span><span class="bt"><span class="ar">الأسطح والتشطيبات</span><span class="en">Surfaces and finishes</span></span></div>
     <div class="parts" style="border-top:0;margin-top:0">
       <div class="row"><span class="mono no"><span class="ar">SCQF ٣١٠</span><span class="en">SCQF 310</span></span>
         <span class="nm"><span class="ar">أعمال البلاط والسيراميك والحجر</span><span class="en">Tiling — ceramic, porcelain and stone</span></span>
         <span class="stat"><span class="ar">مُخطَّط</span><span class="en">Planned</span></span></div>
       <div class="row"><span class="mono no"><span class="ar">SCQF ٣٢٠</span><span class="en">SCQF 320</span></span>
-        <span class="nm"><span class="ar">المواد المانعة للتسرب وفواصل الحركة</span><span class="en">Sealants and movement joints</span></span>
+        <span class="nm"><span class="ar">الطبقات التسوية والأرضيات الإسمنتية</span><span class="en">Screeds and levelling</span></span>
         <span class="stat"><span class="ar">مُخطَّط</span><span class="en">Planned</span></span></div>
       <div class="row"><span class="mono no"><span class="ar">SCQF ٣٣٠</span><span class="en">SCQF 330</span></span>
-        <span class="nm"><span class="ar">أعمال اللياسة والجبس والتشطيبات الإسمنتية</span><span class="en">Plaster, render and gypsum systems</span></span>
+        <span class="nm"><span class="ar">اللياسة والتشطيبات الإسمنتية</span><span class="en">Plaster and render</span></span>
+        <span class="stat s-resv"><span class="ar">محجوز</span><span class="en">Reserved</span></span></div>
+      <div class="row"><span class="mono no"><span class="ar">SCQF ٣٤٠</span><span class="en">SCQF 340</span></span>
+        <span class="nm"><span class="ar">الألواح الجبسية والقواطع الداخلية</span><span class="en">Drylining and internal partitions</span></span>
         <span class="stat"><span class="ar">مُخطَّط</span><span class="en">Planned</span></span></div>
+      <div class="row"><span class="mono no"><span class="ar">SCQF ٣٥٠</span><span class="en">SCQF 350</span></span>
+        <span class="nm"><span class="ar">الدهانات والطلاءات</span><span class="en">Coatings and paint</span></span>
+        <span class="stat s-resv"><span class="ar">محجوز</span><span class="en">Reserved</span></span></div>
+      <div class="row"><span class="mono no"><span class="ar">SCQF ٣٦٠</span><span class="en">SCQF 360</span></span>
+        <span class="nm"><span class="ar">الأرضيات المرنة والخشبية</span><span class="en">Resilient, timber and engineered flooring</span></span>
+        <span class="stat s-resv"><span class="ar">محجوز</span><span class="en">Reserved</span></span></div>
+      <div class="row"><span class="mono no"><span class="ar">SCQF ٣٧٠</span><span class="en">SCQF 370</span></span>
+        <span class="nm"><span class="ar">الأسقف المستعارة</span><span class="en">Suspended ceilings</span></span>
+        <span class="stat s-resv"><span class="ar">محجوز</span><span class="en">Reserved</span></span></div>
     </div>
 
-    <div class="blockhdr"><span class="bn">400</span><span class="bt"><span class="ar">الفتحات والغلاف</span><span class="en">Openings and envelope</span></span></div>
+    <div class="blockhdr"><span class="bn">400</span><span class="bt"><span class="ar">الفتحات وغلاف المبنى</span><span class="en">Openings and envelope</span></span></div>
     <div class="parts" style="border-top:0;margin-top:0">
       <div class="row"><span class="mono no"><span class="ar">SCQF ٤١٠</span><span class="en">SCQF 410</span></span>
-        <span class="nm"><span class="ar">النوافذ والأبواب وإحكام المحيط</span><span class="en">Windows, doors and perimeter sealing</span></span>
+        <span class="nm"><span class="ar">النوافذ والأبواب وإحكام المحيط</span><span class="en">Windows and doors — installation and perimeter sealing</span></span>
         <span class="stat"><span class="ar">مُخطَّط</span><span class="en">Planned</span></span></div>
       <div class="row"><span class="mono no"><span class="ar">SCQF ٤٢٠</span><span class="en">SCQF 420</span></span>
         <span class="nm"><span class="ar">استمرارية العزل الحراري</span><span class="en">Thermal insulation continuity</span></span>
+        <span class="stat"><span class="ar">مُخطَّط</span><span class="en">Planned</span></span></div>
+      <div class="row"><span class="mono no"><span class="ar">SCQF ٤٣٠</span><span class="en">SCQF 430</span></span>
+        <span class="nm"><span class="ar">تداخلات الواجهات والكسوة</span><span class="en">Façade and cladding interfaces</span></span>
+        <span class="stat s-resv"><span class="ar">محجوز</span><span class="en">Reserved</span></span></div>
+      <div class="row"><span class="mono no"><span class="ar">SCQF ٤٤٠</span><span class="en">SCQF 440</span></span>
+        <span class="nm"><span class="ar">الزجاج والدرابزين والحواجز</span><span class="en">Glazing, balustrades and guarding</span></span>
+        <span class="stat s-resv"><span class="ar">محجوز</span><span class="en">Reserved</span></span></div>
+    </div>
+
+    <div class="blockhdr"><span class="bn">500</span><span class="bt"><span class="ar">النجارة والأعمال المركّبة</span><span class="en">Joinery and fitted work</span></span></div>
+    <div class="parts" style="border-top:0;margin-top:0">
+      <div class="row"><span class="mono no"><span class="ar">SCQF ٥١٠</span><span class="en">SCQF 510</span></span>
+        <span class="nm"><span class="ar">التركيبات الثانية: الوزرات والحلوق والتكسيات</span><span class="en">Second fix — skirtings, architraves and linings</span></span>
+        <span class="stat"><span class="ar">مُخطَّط</span><span class="en">Planned</span></span></div>
+      <div class="row"><span class="mono no"><span class="ar">SCQF ٥٢٠</span><span class="en">SCQF 520</span></span>
+        <span class="nm"><span class="ar">التركيبات النهائية والأثاث الثابت</span><span class="en">Third fix and fitted furniture</span></span>
+        <span class="stat s-resv"><span class="ar">محجوز</span><span class="en">Reserved</span></span></div>
+      <div class="row"><span class="mono no"><span class="ar">SCQF ٥٣٠</span><span class="en">SCQF 530</span></span>
+        <span class="nm"><span class="ar">الأكسسوارات ومقابض الأبواب</span><span class="en">Ironmongery and door hardware</span></span>
+        <span class="stat s-resv"><span class="ar">محجوز</span><span class="en">Reserved</span></span></div>
+      <div class="row"><span class="mono no"><span class="ar">SCQF ٥٤٠</span><span class="en">SCQF 540</span></span>
+        <span class="nm"><span class="ar">أسطح العمل الحجرية</span><span class="en">Stone worktops and surrounds</span></span>
+        <span class="stat s-resv"><span class="ar">محجوز</span><span class="en">Reserved</span></span></div>
+    </div>
+
+    <div class="blockhdr"><span class="bn">600</span><span class="bt"><span class="ar">تداخلات الأنظمة</span><span class="en">Services interfaces</span></span></div>
+    <div class="parts" style="border-top:0;margin-top:0">
+      <div class="row"><span class="mono no"><span class="ar">SCQF ٦١٠</span><span class="en">SCQF 610</span></span>
+        <span class="nm"><span class="ar">الاختراقات: التحقق من المعالجة والسجل</span><span class="en">Penetrations — verification of treatment and record</span></span>
+        <span class="stat"><span class="ar">مُخطَّط</span><span class="en">Planned</span></span></div>
+      <div class="row"><span class="mono no"><span class="ar">SCQF ٦٢٠</span><span class="en">SCQF 620</span></span>
+        <span class="nm"><span class="ar">الأدوات الصحية ونهايات السباكة</span><span class="en">Sanitaryware and plumbing terminations</span></span>
+        <span class="stat s-resv"><span class="ar">محجوز</span><span class="en">Reserved</span></span></div>
+      <div class="row"><span class="mono no"><span class="ar">SCQF ٦٣٠</span><span class="en">SCQF 630</span></span>
+        <span class="nm"><span class="ar">تصريف التكثيف ونهايات التكييف</span><span class="en">Condensate and HVAC terminations</span></span>
+        <span class="stat s-resv"><span class="ar">محجوز</span><span class="en">Reserved</span></span></div>
+      <div class="row"><span class="mono no"><span class="ar">SCQF ٦٤٠</span><span class="en">SCQF 640</span></span>
+        <span class="nm"><span class="ar">الأكسسوارات الكهربائية ونهاياتها</span><span class="en">Electrical accessories and terminations</span></span>
+        <span class="stat s-resv"><span class="ar">محجوز</span><span class="en">Reserved</span></span></div>
+    </div>
+
+    <div class="blockhdr"><span class="bn">700</span><span class="bt"><span class="ar">الأعمال الخارجية</span><span class="en">External works</span></span></div>
+    <div class="parts" style="border-top:0;margin-top:0">
+      <div class="row"><span class="mono no"><span class="ar">SCQF ٧١٠</span><span class="en">SCQF 710</span></span>
+        <span class="nm"><span class="ar">التبليط الخارجي والأعمال الصلبة</span><span class="en">External paving and hard landscaping</span></span>
+        <span class="stat s-resv"><span class="ar">محجوز</span><span class="en">Reserved</span></span></div>
+      <div class="row"><span class="mono no"><span class="ar">SCQF ٧٢٠</span><span class="en">SCQF 720</span></span>
+        <span class="nm"><span class="ar">محيطات المسابح</span><span class="en">Pool surrounds and water features</span></span>
+        <span class="stat s-resv"><span class="ar">محجوز</span><span class="en">Reserved</span></span></div>
+      <div class="row"><span class="mono no"><span class="ar">SCQF ٧٣٠</span><span class="en">SCQF 730</span></span>
+        <span class="nm"><span class="ar">الأدراج والمنحدرات والعتبات الخارجية</span><span class="en">External stairs, ramps and thresholds</span></span>
+        <span class="stat s-resv"><span class="ar">محجوز</span><span class="en">Reserved</span></span></div>
+    </div>
+
+    <div class="blockhdr"><span class="bn">800</span><span class="bt"><span class="ar">التسليم وما بعد الإشغال</span><span class="en">Handover and post-occupancy</span></span></div>
+    <div class="parts" style="border-top:0;margin-top:0">
+      <div class="row"><span class="mono no"><span class="ar">SCQF ٨١٠</span><span class="en">SCQF 810</span></span>
+        <span class="nm"><span class="ar">الفحص قبل التسليم</span><span class="en">Pre-handover inspection</span></span>
+        <span class="stat"><span class="ar">مُخطَّط</span><span class="en">Planned</span></span></div>
+      <div class="row"><span class="mono no"><span class="ar">SCQF ٨٢٠</span><span class="en">SCQF 820</span></span>
+        <span class="nm"><span class="ar">مراجعة ما بعد الإشغال وإرجاع بيانات العيوب</span><span class="en">Post-occupancy review and defect data return</span></span>
         <span class="stat"><span class="ar">مُخطَّط</span><span class="en">Planned</span></span></div>
     </div>
 
