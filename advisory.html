@@ -188,6 +188,13 @@ section{padding-top:54px;padding-bottom:54px}
 html.js .rv{opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s ease}
 html.js .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){html.js .rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+.faq{margin-top:30px;border-top:1px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--rule)}
+.faq summary{cursor:pointer;list-style:none;padding:16px 0;font-weight:500;font-size:16.5px;display:flex;justify-content:space-between;gap:18px;align-items:baseline}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--brass);font-family:var(--mono);font-size:18px;flex:0 0 auto}
+.faq details[open] summary::after{content:"\2013"}
+.faq .a{padding:0 0 18px;color:var(--muted);font-size:15.5px;line-height:1.7;max-width:72ch}
 </style><style>
 /* register page additions */
 .steps{counter-reset:st;display:grid;gap:0;margin-top:34px;border-top:1px solid var(--ink)}
@@ -511,6 +518,20 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
     </div>
   </div>
 
+  <section class="wrap">
+    <p class="mono eyebrow"><span class="ar">الخدمة</span><span class="en">The service</span></p>
+    <h2 class="h2"><span class="ar">ضمان جودة البناء للمطوّرين في الرياض وأنحاء المملكة.</span><span class="en">Construction quality assurance for developers in Riyadh and across the Kingdom.</span></h2>
+    <p class="sub"><span class="ar">شاقول للاستشارات ذراعٌ مستقلّ يُدقّق على جودة التنفيذ في المشاريع القائمة مقابل الإطار السعودي لجودة البناء (SCQF): نتّفق على النطاق، ونضبط نقاط التوقّف، ونجمع الأدلة في لحظتها، ونرفع تقريراً قابلاً للاعتماد.</span><span class="en">Shaqool Advisory is an independent arm that assesses installation quality on live projects against SCQF, the Saudi Construction Quality Framework: we agree the scope, set the hold points, capture the evidence at the moment it matters, and report in a form you can rely on.</span></p>
+    <div class="grid g3">
+      <div class="card rv"><h3><span class="ar">ما الذي نُقيّمه</span><span class="en">What we assess</span></h3>
+        <p><span class="ar">اختيار المواد وطريقة تركيبها في التشطيبات — العزل المائي، والبلاط، والفواصل، والأسطح — عند النقاط التي تُغطّى ولا يمكن فحصها لاحقاً.</span><span class="en">The selection and installation of finishing materials — waterproofing, tiling, joints and surfaces — at the points that get covered up and cannot be inspected later.</span></p></div>
+      <div class="card rv"><h3><span class="ar">كيف نعمل</span><span class="en">How we work</span></h3>
+        <p><span class="ar">تدقيق قائم على المخاطر: نركّز ساعات التقييم حيث تكون تكلفة العطل أعلى، بمعدّل عيّنات متّفق عليه، ونقاط توقّف مُدرجة في البرنامج قبل بدء العمل.</span><span class="en">Risk-based assessment: we concentrate the hours where the cost of failure is highest, at an agreed sampling rate, with hold points written into the programme before work begins.</span></p></div>
+      <div class="card rv"><h3><span class="ar">ما الذي تستلمه</span><span class="en">What you receive</span></h3>
+        <p><span class="ar">سجل أدلة مؤرّخ، وتصنيف للمخالفات حسب الخطورة، ونسب كل مخالفة إلى مصدرها — دليل موثّق يحمي الضمان ويُتيح تسعير المخاطرة.</span><span class="en">A dated evidence record, non-conformances classified by severity, and each one attributed to its origin — documented proof that protects the warranty and lets risk be priced.</span></p></div>
+    </div>
+  </section>
+
   <section class="tinted" style="margin-top:54px"><div class="wrap">
     <p class="mono eyebrow"><span class="ar">محوران للاختيار</span><span class="en">Two axes of selection</span></p>
     <h2 class="h2"><span class="ar">ما الذي يهدّد الضمان، وما الذي يستنزف ما بعد التسليم.</span><span class="en">What threatens the warranty, and what drains the aftercare budget.</span></h2>
@@ -641,6 +662,20 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
       <a class="btn btn-b" href="scqf.html"><span class="ar">الإطار الذي نُقيّم عليه</span><span class="en">The framework we assess against</span></a>
     </div>
   </div></section>
+
+  <section class="wrap">
+    <p class="mono eyebrow"><span class="ar">أسئلة شائعة</span><span class="en">Frequently asked</span></p>
+    <h2 class="h2"><span class="ar">أسئلة يطرحها المطوّرون عادةً.</span><span class="en">Questions developers usually ask.</span></h2>
+    <div class="faq">
+      <details><summary><span class="ar">ما هو ضمان جودة البناء؟</span><span class="en">What is construction quality assurance?</span></summary><div class="a"><span class="ar">ضمان جودة البناء هو التحقّق المستقل من أن المواد تُختار وتُركّب بشكل صحيح — قبل أن تُغطّى — بحيث تُمنع العيوب بدل اكتشافها بعد سنوات.</span><span class="en">Construction quality assurance is the independent checking that materials are selected and installed correctly — before the work is covered up — so that defects are prevented rather than discovered years later.</span></div></details>
+      <details><summary><span class="ar">ماذا تقدّم شاقول للاستشارات؟</span><span class="en">What does Shaqool Advisory do?</span></summary><div class="a"><span class="ar">نُدقّق على جودة التنفيذ في المشاريع القائمة مقابل الإطار السعودي لجودة البناء (SCQF): نتّفق مع المطوّر على النطاق، ونحدّد نقاط التوقّف، ونجمع الأدلة لحظة التنفيذ، ونرفع المخالفات مصنّفةً حسب الخطورة والمصدر.</span><span class="en">We assess installation quality on live projects against SCQF, the Saudi Construction Quality Framework: we agree the scope with the developer, set hold points, capture evidence at the moment of work, and report non-conformances by severity and origin.</span></div></details>
+      <details><summary><span class="ar">هل تعملون في الرياض؟</span><span class="en">Do you work in Riyadh?</span></summary><div class="a"><span class="ar">نعم. عملياتنا في الرياض، ونعمل مع المطوّرين فيها وفي أنحاء المملكة العربية السعودية.</span><span class="en">Yes. Our operations are based in Riyadh, and we work with developers there and across Saudi Arabia.</span></div></details>
+      <details><summary><span class="ar">لمن هذه الخدمة؟</span><span class="en">Who is the service for?</span></summary><div class="a"><span class="ar">للمطوّرين والمقاولين الراغبين في تقليل عيوب ما بعد التسليم، وحماية الضمانات، والحصول على دليل موضوعي موثّق على جودة التنفيذ.</span><span class="en">Developers and contractors who want post-handover defects reduced, warranties protected, and objective, documented evidence of installation quality.</span></div></details>
+      <details><summary><span class="ar">كيف يختلف هذا عن الفحص البلدي أو كود البناء السعودي؟</span><span class="en">How is this different from municipal inspection or the Saudi Building Code?</span></summary><div class="a"><span class="ar">يغطّي كود البناء والفحص البلدي السلامة والإنشاء. ونحن لا نحلّ محلّهما ولا نكرّرهما؛ بل نعالج جودة تنفيذ التشطيبات — الطبقة الواقعة بين الكود والضمان التي لا تغطّيها أي جهة أخرى.</span><span class="en">The Building Code and municipal inspection cover safety and structure. We do not replace or repeat them; we address the quality of finishing installation — the layer that sits between the code and the warranty and is covered by no one else.</span></div></details>
+      <details><summary><span class="ar">كيف نبدأ؟</span><span class="en">How do we start?</span></summary><div class="a"><span class="ar">راسلنا على hello@shaqool.org. الخطوة الأولى محادثة قصيرة والاتفاق على نطاق التقييم — الذي يصبح ملحقاً تعاقدياً لا مجرّد عرض سعر.</span><span class="en">Contact us at hello@shaqool.org. The first step is a short conversation and agreeing the assessment scope — which becomes a contract annex rather than a proposal.</span></div></details>
+    </div>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is construction quality assurance?", "acceptedAnswer": {"@type": "Answer", "text": "Construction quality assurance is the independent checking that materials are selected and installed correctly — before the work is covered up — so that defects are prevented rather than discovered years later."}}, {"@type": "Question", "name": "What does Shaqool Advisory do?", "acceptedAnswer": {"@type": "Answer", "text": "We assess installation quality on live projects against SCQF, the Saudi Construction Quality Framework: we agree the scope with the developer, set hold points, capture evidence at the moment of work, and report non-conformances by severity and origin."}}, {"@type": "Question", "name": "Do you work in Riyadh?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Our operations are based in Riyadh, and we work with developers there and across Saudi Arabia."}}, {"@type": "Question", "name": "Who is the service for?", "acceptedAnswer": {"@type": "Answer", "text": "Developers and contractors who want post-handover defects reduced, warranties protected, and objective, documented evidence of installation quality."}}, {"@type": "Question", "name": "How is this different from municipal inspection or the Saudi Building Code?", "acceptedAnswer": {"@type": "Answer", "text": "The Building Code and municipal inspection cover safety and structure. We do not replace or repeat them; we address the quality of finishing installation — the layer that sits between the code and the warranty and is covered by no one else."}}, {"@type": "Question", "name": "How do we start?", "acceptedAnswer": {"@type": "Answer", "text": "Contact us at hello@shaqool.org. The first step is a short conversation and agreeing the assessment scope — which becomes a contract annex rather than a proposal."}}]}</script>
+  </section>
 
 </main>
 
