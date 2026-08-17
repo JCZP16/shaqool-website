@@ -75,6 +75,10 @@ img,svg{max-width:100%}
   border-bottom:1px solid var(--rule)}
 @supports ((-webkit-backdrop-filter:blur(10px)) or (backdrop-filter:blur(10px))){
   .hd{background:rgba(242,237,228,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}}
+.topbar{background:var(--accent);color:#efe9df}
+.topbar-in{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding-top:9px;padding-bottom:9px;text-align:center}
+.topbar .tb-mark{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:#e8c98a;border:1px solid rgba(166,124,46,.7);border-radius:2px;padding:2px 8px;white-space:nowrap}
+.topbar .tb-txt{font-family:var(--mono);font-size:12.5px;letter-spacing:.01em}
 .hd-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:12px;padding-bottom:12px}
 .lockup{text-decoration:none;line-height:1.2;display:block}
 .lockup b{display:block;font-family:var(--ar-disp);font-size:23px;font-weight:700}
@@ -382,6 +386,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 <input type="checkbox" id="nav" class="sr" aria-label="Open menu / فتح القائمة">
 
 <div class="app">
+
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <span class="tb-mark">CITYSCAPE ’26</span>
+    <span class="tb-txt">
+      <span class="ar">نلتقيكم في سيتي سكيب العالمي ٢٠٢٦ بالرياض</span>
+      <span class="en">Meet us at Cityscape Global 2026 in Riyadh</span>
+    </span>
+  </div>
+</div>
 
 <header class="hd">
   <div class="wrap hd-in">
